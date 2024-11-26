@@ -53,7 +53,7 @@ export const themeState = atomWithStorage<Theme>(
 
 export const serverAddressState = atomWithStorage<string>(
   'server-addr',
-  localStorage.getItem('server-addr') || window.location.hostname
+  localStorage.getItem('server-addr')?.replaceAll(/["]/g, '') || window.location.hostname
 )
 
 export const serverPortState = atomWithStorage<number>(
