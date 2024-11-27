@@ -7,6 +7,7 @@
             "dom.iterable",
             "esnext"
         ],
+        "sourceMap": true, // 启用 TS 的源映射
         "allowJs": true,
         "skipLibCheck": true,
         "esModuleInterop": true,

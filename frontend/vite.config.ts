@@ -10,9 +10,24 @@ export default defineConfig(() => {
       react(),
       ViteYaml(),
     ],
+
     base: '',
     build: {
       emptyOutDir: true,
+      sourceMap: true,
+    }, proxy: {
+      '/': {
+        target: 'http://120.26.230.168:8989',
+        changeOrigin: true,
+        ws: true,
+      },
+
+    // '/rpc/ws': {
+    //   target: 'ws://120.26.230.168:8989',
+    //   ws: true,// 这里添加 ws: true 以支持 WebSocket
+    //   changeOrigin: true,
+    //   //rewrite: (path) => path.replace(/~\/rpc\/ws/, "") // 路径转写
+    // } 
     }
   }
 })
